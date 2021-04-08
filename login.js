@@ -19,7 +19,7 @@ function check() {
     }else {
         localStorage.setItem('token', 'wellcom to IOT site admin');
       
-        window.location.replace='index.html'
+        window.location.href='index.html'
        
         
        
