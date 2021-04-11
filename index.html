@@ -12,11 +12,16 @@
 <body>
     <div class="container">  
 
-      <!-- <div class="alert alert-danger" role="alert">
-        A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-      </div> -->
+      <div class="alert alert-danger hide"  role="alert">
+        Dangerous
+      </div>
       <div class="row flex-row  my-2">
-        <h1 class="col-9">IOT Google Map</h1>
+        <h1 class="col-7">IOT Google Map</h1>
+        <div class="col-2">
+          <div id="time_" style="text-align: center; font-size:larger; font-weight: 500;" >11:09:50 PM</div>
+          <div id="date" style="text-align: center; font-size:larger; font-weight: 500;" >4/5/2021</div>
+        </div>
+
         <a  href="listing.html" class="btn btn-primary col-1 mx-2" style="padding: .85rem .75rem;" >View all</a>
         <button type="button" class="btn btn-primary col-1 mx-2 " onclick="logout()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
@@ -35,7 +40,7 @@
               <div class="card-body col-sm-6">
                 <h5 class="card-title">Heart rate</h5>
                 <p class="card-text">the heart rate beats is <span style="font-weight: 500;">Normal</span></p>
-                <a href="#" class="btn btn-primary">See All</a>
+                <a href="heart.html" class="btn btn-primary">See All</a>
               </div>
               <div class="col-sm-4 my-5">
                 <div id="heart" class="border border-5 border-success card-body rounded-pill" style="text-align: center; font-size:larger; font-weight: 500;">
@@ -50,7 +55,7 @@
               <div class="card-body col-sm-5">
                 <h5 class="card-title">Body temperature</h5>
                 <p class="card-text">the body temperature is <span style="font-weight: 500;">Normal</span></p>
-                <a href="#" class="btn btn-primary">See All</a>
+                <a href="temperature.html" class="btn btn-primary">See All</a>
               </div>
               <div class="col-sm-4 my-5">
                 <div id="temperature" class="border border-5 border-success card-body rounded-pill" style="text-align: center; font-size:larger; font-weight: 500;">
