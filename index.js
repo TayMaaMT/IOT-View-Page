@@ -1,8 +1,10 @@
 
   var token = localStorage.getItem('token');
+
   if(token){
+    
     var heart = document.querySelector("#heart");
-    var date = document.querySelector("#date");
+    var date_ = document.querySelector("#date");
     var time = document.querySelector("#time_");
     var temperature = document.querySelector("#temperature");
   
@@ -144,6 +146,9 @@
   });
   } 
 function viewLast(){
+  let alert_1 = document.querySelector("#alert1");
+  let alert_2 = document.querySelector("#alert2");
+
   fetch('https://iotsensors12.herokuapp.com/readLast', {
     method: 'GET', // or 'PUT'
     headers: {
@@ -153,12 +158,29 @@ function viewLast(){
   .then(response => response.json())
   .then(data => {
     const date = new Date(data.date);
-    date.textContent = date.toLocaleDateString();
+    date_.textContent = date.toLocaleDateString();
     time.textContent= date.toLocaleTimeString();
     heart.textContent=data.heart_beats;
     temperature.textContent=data.temperature;
     lng=parseInt(data.latitude);
     lat=parseInt(data.longitude);
+
+    if(data.heart_beats>95||data.heart_beats<70){
+      alert_1.classList.remove("hide");
+      alert_1.classList.add("show");
+      alert_1.textContent=" heart beats not Normal "
+    }else{
+      alert_1.classList.remove("show");
+      alert_1.classList.add("hide");
+    }
+    if(data.temperature>39||data.temperature<34){
+      alert_2.classList.remove("hide");
+      alert_2.classList.add("show");
+      alert_2.textContent=" temperature not Normal"
+    }else{
+      alert_2.classList.remove("show");
+      alert_2.classList.add("hide");
+    }
     initMap(lat,lng);
   }).catch((error) => {
     console.error('Error:', error);
@@ -173,7 +195,7 @@ function viewLast(){
   console.log("hi")
   const myLatLng = { lng,lat };
   map= new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 5,
+    zoom: 10,
     center: myLatLng,
   });
   new google.maps.Marker({
