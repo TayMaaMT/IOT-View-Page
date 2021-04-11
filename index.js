@@ -5,17 +5,20 @@
     var date = document.querySelector("#date");
     var time = document.querySelector("#time_");
     var temperature = document.querySelector("#temperature");
-    viewAll();
-    viewHeart();
-    viewTemperature();
-    viewLast();
-    setInterval(()=>{
+  
       viewLast();
-    },15000)
-    
-  function goTOListing(){
-    window.location.href='listing.html'
-  }
+      setInterval(()=>{
+        viewLast();
+      },15000)
+
+   
+      viewAll();
+ 
+      viewHeart();
+
+      viewTemperature();
+ 
+     
   function logout(){
     localStorage.removeItem("token");
     window.location.href='login.html'
