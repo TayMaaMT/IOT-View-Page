@@ -148,6 +148,10 @@
 function viewLast(){
   let alert_1 = document.querySelector("#alert1");
   let alert_2 = document.querySelector("#alert2");
+  let normal1 = document.querySelector(".normal1");
+
+  let normal2 = document.querySelector(".normal2");
+
 
   fetch('https://iotsensors12.herokuapp.com/readLast', {
     method: 'GET', // or 'PUT'
@@ -169,6 +173,7 @@ function viewLast(){
       alert_1.classList.remove("hide");
       alert_1.classList.add("show");
       alert_1.textContent=" heart beats not Normal "
+      normal2.textContent="Not Normal"
     }else{
       alert_1.classList.remove("show");
       alert_1.classList.add("hide");
@@ -177,6 +182,7 @@ function viewLast(){
       alert_2.classList.remove("hide");
       alert_2.classList.add("show");
       alert_2.textContent=" temperature not Normal"
+      normal2.textContent="Not Normal"
     }else{
       alert_2.classList.remove("show");
       alert_2.classList.add("hide");
